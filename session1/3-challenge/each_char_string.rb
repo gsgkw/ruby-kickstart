@@ -8,12 +8,13 @@ def pirates_say_arrrrrrrrr(string)
 to_return = ""
 r_last = false
 
-string.downcase.each_char do |c|
-	to_return << c if r_last
-	r_last = (c == "r")
+string.each_char do |x|
+
+	to_return << x if r_last
+	r_last = (x == "r")
 	end
 
 print to_return
 end
 
-pirates_say_arrrrrrrrr("Katy Perry is on the radio!")
+pirates_say_arrrrrrrrr("how're your arrrmy yfriends")
