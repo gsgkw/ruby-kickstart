@@ -13,7 +13,5 @@ string.downcase.each_char do |c|
 	r_last = (c == "r")
 	end
 
-print to_return
+to_return
 end
-
-pirates_say_arrrrrrrrr("Katy Perry is on the radio!")

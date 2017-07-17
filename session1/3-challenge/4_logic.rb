@@ -13,14 +13,13 @@
 
 
 def grade(num_books, has_read_books)
+
 case
 when num_books < 10 then letter = "C"
-when num_books >= 10 && num_books < 20 then letter = "B"
-when num_books >= 20 then letter = "A"
+when num_books >= 10 && num_books <= 20 then letter = "B"
+when num_books > 20 then letter = "A"
 end
 
-puts has_read_books ? letter : letter.next
+has_read_books ? letter : letter.next
 
 end
-
-grade(10, false)

@@ -7,8 +7,6 @@
 
 def odds_and_evens(string, return_odds)
 array = string.split("")
-!return_odds ? array.select.with_index {|a,i| i.odd? }.join : array.select.with_index {|a,i| i.even? }.join
+!return_odds ? array.select.with_index {|a,i| i.even? }.join : array.select.with_index {|a,i| i.odd? }.join
 
 end
-
-print odds_and_evens("hello", false)
