@@ -13,9 +13,7 @@ def sum_difference_product
 puts "Please type your two integers separated by a space and followed by enter"
 integers = gets.chomp.split (" ")
 integers.map! { |num| num.to_i }
-puts integers[0] + integers[1]  
-puts integers[0] - integers[1]  
-puts integers[0] * integers[1]  
+puts integers[0] + integers[1]
+puts integers[0] - integers[1]
+puts integers[0] * integers[1]
 end
-
-sum_difference_product
