@@ -8,6 +8,8 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
-
-
-
+def staircase (n)
+to_return = {}
+(1..n).select {|i| i.odd?}.each {|num| to_return[num] = (1..num).select{|n| n.even?}}
+to_return
+end

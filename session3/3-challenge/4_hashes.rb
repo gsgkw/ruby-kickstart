@@ -6,3 +6,8 @@
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
+def first_pos(string)
+  to_return = {}
+  string.split.each{|word| to_return[word] = string.split.find_index (word)}
+to_return
+end
