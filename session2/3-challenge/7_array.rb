@@ -10,22 +10,8 @@
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
 def alternate_words(string)
-string.chars.map!{|c| c = " " if c == ('!@$#%^&*()-=_+[]:;,./<>?\\|').split("")}
+('!@$#%^&*()-=_+[]:;,./<>?\\|').each_char { |char| string = string.gsub(char, " ") }
 to_return = []
-string.split.each_with_index{|word, index| to_return << word if index.even?  }
+string.split.each_with_index{|word, index| to_return << word if index.even? }
 to_return
 end
-
-
-"
-'!@$#%^&*()-=_+[]:;,./<>?\\|'.split(//).each do |char|
-  sentence = sentence.gsub(char, ' ')
-end
-words = sentence.split
-solution = []
-words.each_with_index do |word, index|
-  solution << word if index.even?
-end
-solution
-end
-"
