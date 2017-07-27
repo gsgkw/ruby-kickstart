@@ -46,5 +46,13 @@
 # head = {:data => 6, :next => head}
 # middle head                        # => 3
 
+def head_nums(head)
+return 1 if head[:next] == nil
+1 + head_nums(head[:next])
+end
 
 
+def middle(head)
+  (head_nums(head)/2).times {head = head[:next]}
+  head[:data]
+end

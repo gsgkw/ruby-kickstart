@@ -30,5 +30,17 @@
 #
 # create it from scratch :)
 
+def pathify(filehash)
+return filehash.map{|file| "/" + file } if filehash.is_a? Array
 
+to_return = []
 
+filehash.each do |parent, child|
+  parent_dir = "/" + parent
+  child_dirs = pathify(child)
+  child_dirs.each do |child|
+    to_return << (parent_dir + child)
+  end
+end
+to_return
+end

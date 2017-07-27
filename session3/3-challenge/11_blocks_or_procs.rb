@@ -31,25 +31,7 @@
 #   end
 # end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def array_init n=5, &block
+  block ||= Proc.new{|i| (i*100).to_s}
+Array.new(n,&block)
+end

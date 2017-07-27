@@ -11,7 +11,26 @@
 # problem_14 1, 2, 2, 3, 4, 4, :problem => :count_clumps    # => 2
 # problem_14 1, 1, 2, 1, 1,    :problem => :count_clumps    # => 2
 # problem_14 1, 1, 1, 1, 1,    :problem => :count_clumps    # => 1
-#
+
+def problem_14(*params)
+  option = params.pop[:problem] if params.last.is_a? Hash
+  option ||= :count_clumps
+
+  option == :count_clumps ? count_clumps(*params): same_ends(*params)
+end
+
+def count_clumps(*array)
+count = 0
+array.each_with_index do |n,i|
+  count+=1 if n == array[i+1] && (n != array[i-1] || i-1<0)
+end
+count
+end
+
+def same_ends(n, *array)
+  array[0...n] == array[-n,n]
+end
+
 #
 # PROBLEM: same_ends
 # Return true if the group of N numbers at the start and end of the array are the same.
@@ -22,6 +41,3 @@
 # problem_14 1,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
 # problem_14 2,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => true
 # problem_14 3,   5, 6, 45, 99, 13, 5, 6,  :problem => :same_ends    # => false
-
-
-

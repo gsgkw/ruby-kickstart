@@ -10,5 +10,7 @@
 # print_list_in_reverse head   # >> "1\n2\n"
 
 def print_list_in_reverse list
-  
-end
+  return unless list
+    print_list_in_reverse list[:next]
+    puts list[:data]
+  end
